@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [PageController::class, 'home']);
+Route::get('/product', [ProductController::class, 'index']);
+Route::get('/program', [PageController::class, 'program']);
+Route::get('/news', [PageController::class, 'news']);
+Route::get('/about', [PageController::class, 'about']);
+Route::get('/contact', [PageController::class, 'contact']);
