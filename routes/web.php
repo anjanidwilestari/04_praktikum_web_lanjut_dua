@@ -20,6 +20,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class, 'home']);
 Route::get('/product', [ProductController::class, 'index']);
 Route::get('/program', [PageController::class, 'program']);
-Route::get('/news', [PageController::class, 'news']);
+Route::get('/newss/{slug}', [NewsController::class, 'newss']);
 Route::get('/about', [PageController::class, 'about']);
 Route::get('/contact', [PageController::class, 'contact']);
